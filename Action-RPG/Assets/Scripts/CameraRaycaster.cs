@@ -22,13 +22,12 @@ public class CameraRaycaster : MonoBehaviour
         get { return layerHit; }
     }
 
-    public delegate void OnLayerChange();
-    public event OnLayerChange layerChangeObservers;
+    public delegate void OnLayerChange(Layer newLayer);
+    public event OnLayerChange onLayerChange;
 
     void Start()
     {
         viewCamera = Camera.main;
-        layerChangeObservers();
     }
 
     void Update()
@@ -43,7 +42,7 @@ public class CameraRaycaster : MonoBehaviour
                 if(layerHit != layer)
                 {
                     layerHit = layer;
-                    layerChangeObservers();
+                    onLayerChange(layer);
                 }
                 layerHit = layer;
                 return;
