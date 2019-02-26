@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CameraRaycaster))]
 public class CursorAffordance : MonoBehaviour
 {
     [SerializeField]
@@ -11,7 +12,7 @@ public class CursorAffordance : MonoBehaviour
     [SerializeField]
     Texture2D unknownCursor = null;
     [SerializeField]
-    Vector2 cursorHotspot = new Vector2(96f, 96f);
+    Vector2 cursorHotspot = new Vector2(0, 0);
 
     CameraRaycaster cameraRaycaster;
 
@@ -19,12 +20,13 @@ public class CursorAffordance : MonoBehaviour
     void Start()
     {
         cameraRaycaster = GetComponent<CameraRaycaster>();
+        cameraRaycaster.layerChangeObservers += OnLayerChanged;
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void OnLayerChanged()
     {
-        switch (cameraRaycaster.layerHit)
+        switch (cameraRaycaster.currentLayerHit)
         {
             case Layer.Walkable:
                 Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
@@ -36,7 +38,7 @@ public class CursorAffordance : MonoBehaviour
                 Cursor.SetCursor(unknownCursor, cursorHotspot, CursorMode.Auto);
                 break;
             default:
-                Debug.LogError("Unsure which cursor to used!");
+                Debug.LogError("Unsure which cursor to use!");
                 return;
         }
     }

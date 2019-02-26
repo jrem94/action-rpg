@@ -110,6 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bb594ce96a0af4b8cadcab607c6984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkCursor: {fileID: 2800000, guid: d5a164a65798f4a4ea7b1fa2fa73d605, type: 3}
+  targetCursor: {fileID: 2800000, guid: 547b7aafe2269d242b6c67899f41b0c3, type: 3}
+  unknownCursor: {fileID: 2800000, guid: a22d04c36b4eab94fae242bfddf29b87, type: 3}
+  cursorHotspot: {x: 0, y: 0}
 --- !u!1 &1365594585243274332
 GameObject:
   m_ObjectHideFlags: 0

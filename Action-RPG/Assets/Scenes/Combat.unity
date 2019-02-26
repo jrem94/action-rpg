@@ -14850,6 +14850,16 @@ PrefabInstance:
       propertyPath: targetCursor
       value: 
       objectReference: {fileID: 2800000, guid: 547b7aafe2269d242b6c67899f41b0c3, type: 3}
+    - target: {fileID: 2972870228034842543, guid: 0bd982427e8ac834aa4251f4b0526c7c,
+        type: 3}
+      propertyPath: cursorHotspot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972870228034842543, guid: 0bd982427e8ac834aa4251f4b0526c7c,
+        type: 3}
+      propertyPath: cursorHotspot.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd982427e8ac834aa4251f4b0526c7c, type: 3}
 --- !u!1001 &1490967450722853799
